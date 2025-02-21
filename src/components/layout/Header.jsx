@@ -38,10 +38,10 @@ function Header() {
         <h1 className="text-2xl font-semibold text-primary">ClicketyCart</h1>
         <ul className="hidden lg:flex gap-4 text-lg font-semibold text-primary">
           <li>
-            <a href="#">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="/contact">Contact</a>
           </li>
         </ul>
         <i className="fa-solid fa-cart-shopping text-primary text-2xl"></i>
