@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: oklch(29.39% 0.1077 266.22);
+  --color-secondary: oklch(95.48% 0.0237 223.67);
+  --color-accent: oklch(60.48% 0.216559 257.2136);
+  --color-background: oklch(98.27% 0.008 114.22);
+  --color-copy: oklch(0% 0 0);
+  --font-logo:
+    "Fredoka", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-title: "Orbitron", ui-sans-serif, system-ui, sans-serif;
+  --font-copy: "Roboto", ui-sans-serif, system-ui, sans-serif;
+}
