@@ -16,12 +16,10 @@ This project is the **frontend implementation** of a fictional e-commerce store,
    - [Installation and Setup](#installation-and-setup)
 3. [Development Tools and Configuration](#development-tools-and-configuration)
    - [Tools Used](#tools-used)
-   - [Linting and Formatting](#linting-and-formatting)
 4. [Commit Message Guidelines](#commit-message-guidelines)
    - [Format](#format)
    - [Types](#types)
 5. [License](#license)
-6. [Future Updates](#future-updates)
 
 ---
 
