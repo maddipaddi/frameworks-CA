@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -27,10 +28,10 @@ function Header() {
 
             <ul className="flex flex-col items-center justify-between text-lg font-semibold text-background bg-primary mt-10 space-y-4">
               <li>
-                <a href="#">Home</a>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <NavLink to="/contact">Contact</NavLink>
               </li>
             </ul>
           </div>
@@ -38,10 +39,10 @@ function Header() {
         <h1 className="text-2xl font-semibold text-primary">ClicketyCart</h1>
         <ul className="hidden lg:flex gap-4 text-lg font-semibold text-primary">
           <li>
-            <a href="/">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
         </ul>
         <i className="fa-solid fa-cart-shopping text-primary text-2xl"></i>
