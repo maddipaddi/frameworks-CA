@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ProductCard() {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://api.noroff.dev/api/v1/online-shop")
@@ -19,9 +21,10 @@ function ProductCard() {
           <img
             className="card-img"
             src={product.imageUrl}
-            alt={product.imageUrl}
+            alt={product.imageAlt}
           />
           <h2 className="card-title">{product.title}</h2>
+
           <p className="card-text">{product.description}</p>
 
           <p className="card-rating">⭐ {product.rating || "No rating"}</p>
@@ -33,13 +36,19 @@ function ProductCard() {
           <div className="button-price-container">
             <button className="card-button">Add</button>
             <p
-              className={`card-price ${product.discountedPrice < product.price ? "on-sale" : ""}`}
+              className={`card-price font-title font-bold ${product.discountedPrice < product.price ? "on-sale" : ""}`}
             >
               {product.discountedPrice < product.price
                 ? `On Sale: $${product.discountedPrice} `
                 : ` $${product.price}`}
             </p>
           </div>
+          <button
+            onClick={() => navigate(`/product/${product.id}`)}
+            className="view-details-btn p-2 pt-3 cursor-pointer"
+          >
+            View Details
+          </button>
         </div>
       ))}
     </div>

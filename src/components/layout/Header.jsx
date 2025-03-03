@@ -45,7 +45,9 @@ function Header() {
             <NavLink to="/contact">Contact</NavLink>
           </li>
         </ul>
-        <i className="fa-solid fa-cart-shopping text-primary text-2xl"></i>
+        <NavLink to="/Basket">
+          <i className="fa-solid fa-cart-shopping text-primary text-2xl"></i>
+        </NavLink>
       </nav>
     </header>
   );
