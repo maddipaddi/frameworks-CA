@@ -12,6 +12,33 @@ footer {
   width: 100%;
 }
 
+/* Single product page */
+
+.view-details-btn:hover {
+  background: #132661;
+  color: white;
+}
+
+.product-img {
+  object-fit: cover;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.back-btn-container:hover .go-back-btn {
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.301);
+}
+
+.product-add-btn:hover {
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.301);
+}
+
+/* Home */
+
 .product-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -46,6 +73,7 @@ footer {
 .card-title {
   font-family: "Orbitron", serif;
   font-size: large;
+  font-weight: bolder;
   padding-left: 20px;
   padding-right: 10px;
   margin: 10px 0px;
@@ -127,5 +155,36 @@ footer {
 
   .card-price {
     margin-right: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .product-Card {
+    max-width: 300px;
+  }
+
+  .card-img {
+    height: 180px;
+  }
+
+  .card-title,
+  .card-text,
+  .card-rating,
+  .card-tags {
+    font-size: 1.1rem;
+  }
+
+  .card-button {
+    font-size: larger;
+    padding: 8px 15px;
+    height: 40px;
   }
 }
