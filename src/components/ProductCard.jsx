@@ -1,18 +1,12 @@
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function ProductCard() {
-  const [products, setProducts] = useState([]);
+function ProductCard({ products, onProductClick }) {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch("https://v2.api.noroff.dev/online-shop")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => setProducts(data.data))
-      .catch((error) => console.error("Error fetching products:", error));
-  }, []);
+  if (products.length === 0) {
+    return <p>No products found.</p>;
+  }
 
   return (
     <div className="product-container">
@@ -44,7 +38,11 @@ function ProductCard() {
             </p>
           </div>
           <button
-            onClick={() => navigate(`/product/${product.id}`)}
+            onClick={() =>
+              onProductClick
+                ? onProductClick(product.id)
+                : navigate(`/product/${product.id}`)
+            }
             className="view-details-btn p-2 pt-3 cursor-pointer"
           >
             View Details
@@ -54,5 +52,10 @@ function ProductCard() {
     </div>
   );
 }
+
+ProductCard.propTypes = {
+  products: PropTypes.array.isRequired,
+  onProductClick: PropTypes.func.isRequired,
+};
 
 export default ProductCard;
