@@ -6,11 +6,11 @@ function ProductCard() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://api.noroff.dev/api/v1/online-shop")
+    fetch("https://v2.api.noroff.dev/online-shop")
       .then((response) => {
         return response.json();
       })
-      .then((data) => setProducts(data))
+      .then((data) => setProducts(data.data))
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
@@ -20,8 +20,8 @@ function ProductCard() {
         <div key={product.id} className="product-Card">
           <img
             className="card-img"
-            src={product.imageUrl}
-            alt={product.imageAlt}
+            src={product.image.url}
+            alt={product.image.alt}
           />
           <h2 className="card-title">{product.title}</h2>
 
