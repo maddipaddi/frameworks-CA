@@ -1,22 +1,15 @@
-import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 import { ArrowBigLeft } from "lucide-react";
 
-function SingleProduct() {
+function SingleProduct({ products }) {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch(`https://api.noroff.dev/api/v1/online-shop/${id}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => setProduct(data))
-      .catch((error) => console.error("Error fetching product:", error));
-  }, [id]);
-
+  const product = products.find((item) => item.id === id);
   if (!product) {
-    return <p>Loading product details...</p>;
+    return <p className="text-red-500 text-center mt-5">Product not found.</p>;
   }
 
   return (
@@ -24,8 +17,8 @@ function SingleProduct() {
       <div className="image-container ">
         <img
           className="product-img border-4 border-accent"
-          src={product.imageUrl}
-          alt={product.imsgeAlt}
+          src={product.image.url}
+          alt={product.image.alt}
         />
       </div>
 
@@ -60,7 +53,7 @@ function SingleProduct() {
       <div className="product-btn-container pt-30 flex flex-row justify-between">
         <div className="back-btn-container">
           <button
-            onClick={() => window.history.back()}
+            onClick={() => navigate(-1)}
             className="go-back-btn flex items-center gap-2 cursor-pointer bg-accent text-white p-2 rounded-md"
           >
             <ArrowBigLeft size={30} className="text-white" />
@@ -76,5 +69,9 @@ function SingleProduct() {
     </div>
   );
 }
+
+SingleProduct.propTypes = {
+  products: PropTypes.array.isRequired,
+};
 
 export default SingleProduct;

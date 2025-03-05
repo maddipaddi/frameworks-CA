@@ -1,18 +1,20 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import SearchBar from "../SearchBar";
+import PropTypes from "prop-types";
 
-function Header() {
+function Header({ products }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <header className="m-4 p-4 font-logo">
+    <header className="flex flex-col gap-6 m-4 p-4 font-logo">
       <nav className="flex justify-between">
         <section className="flex lg:hidden">
           <button
             className="cursor-pointer"
             onClick={() => setIsNavOpen((prev) => !prev)}
           >
-            <i className="fa-solid fa-bars text-2xl text-primary"></i>
+            <i className="fa-solid fa-bars text-2xl text-primary px-2 md:px-14"></i>
           </button>
           <div
             className={`fixed top-4 left-4 w-64 h-80 rounded-lg bg-primary shadow-lg p-5 transform ${
@@ -36,8 +38,10 @@ function Header() {
             </ul>
           </div>
         </section>
-        <h1 className="text-2xl font-semibold text-primary">ClicketyCart</h1>
-        <ul className="hidden lg:flex gap-4 text-lg font-semibold text-primary">
+        <h1 className="text-2xl font-semibold text-primary px-2">
+          ClicketyCart
+        </h1>
+        <ul className="hidden lg:flex self-center px-4 gap-12 text-lg font-semibold text-primary">
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
@@ -45,12 +49,17 @@ function Header() {
             <NavLink to="/contact">Contact</NavLink>
           </li>
         </ul>
-        <NavLink to="/Basket">
+        <NavLink to="/Basket" className="px-2 md:px-14 flex self-center">
           <i className="fa-solid fa-cart-shopping text-primary text-2xl"></i>
         </NavLink>
       </nav>
+      <SearchBar products={products} />
     </header>
   );
 }
+
+Header.propTypes = {
+  products: PropTypes.array.isRequired,
+};
 
 export default Header;
