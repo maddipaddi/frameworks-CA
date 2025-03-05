@@ -18,25 +18,35 @@ function ContactForm() {
   const validateForm = () => {
     let newErrors = {};
 
-    if (!formData.fullName.trim())
-      newErrors.fullName = "Full name is requiered.";
+    if (formData.fullName.trim().length < 3)
+      newErrors.fullName = "Full name is required.";
+
     if (!formData.email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/))
       newErrors.email = "Enter a valid email address.";
-    if (!formData.subject.trim()) newErrors.subject = "Subject is required.";
-    if (formData.description.length < 10)
-      newErrors.description =
-        "Description must be at least 10 characters long.";
+
+    if (formData.subject.trim().length < 3)
+      newErrors.subject = "Subject is required.";
+
+    if (formData.description.length < 3)
+      newErrors.description = "Description must be at least 3 characters long.";
 
     setErrors(newErrors);
+
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (validateForm()) {
-      console.log("Forem submitted", formData);
-      alert("Message sent succesfully!");
-      setFormData({ fullName: "", email: "", subject: "", description: "" });
+      console.log("Form submitted:", formData);
+      alert("Message sent successfully!");
+
+      setTimeout(() => {
+        setFormData({ fullName: "", email: "", subject: "", description: "" });
+      }, 100);
+    } else {
+      console.log("Form validation failed.");
     }
   };
 
