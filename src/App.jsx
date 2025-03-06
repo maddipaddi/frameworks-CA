@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Layout from "./components/layout/Layout";
 import SingleProduct from "./pages/SingleProduct";
 import Basket from "./pages/Basket";
+import Checkout from "./pages/Checkout";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -30,6 +31,7 @@ function App() {
             element={<SingleProduct products={products} />}
           />
           <Route path="/Basket" element={<Basket />} />
+          <Route path="/Checkout" element={<Checkout />} />
         </Route>
       </Routes>
     </div>
