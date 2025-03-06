@@ -9,6 +9,7 @@ const BaseButton = styled.button`
   font-weight: bold;
   font-size: 1.25rem;
   max-width: fit-content;
+  cursor: pointer;
 `;
 
 export default BaseButton;
