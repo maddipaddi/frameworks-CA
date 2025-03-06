@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Layout from "./components/layout/Layout";
 import SingleProduct from "./pages/SingleProduct";
 import Basket from "./pages/Basket";
+import Checkout from "./pages/Checkout";
 import ProductCard from "./components/ProductCard";
 
 function App() {
@@ -64,6 +65,8 @@ function App() {
             path="/basket"
             element={<Basket cart={cart} setCart={setCart} />}
           />
+          <Route path="/Basket" element={<Basket />} />
+          <Route path="/Checkout" element={<Checkout />} />
         </Route>
       </Routes>
     </div>
