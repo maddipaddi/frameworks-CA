@@ -3,8 +3,10 @@ import { NavLink } from "react-router-dom";
 import SearchBar from "../SearchBar";
 import PropTypes from "prop-types";
 
-function Header({ products }) {
+function Header({ products, cart }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const totalCartItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <header className="flex flex-col gap-6 m-4 p-4 font-logo">
@@ -49,8 +51,14 @@ function Header({ products }) {
             <NavLink to="/contact">Contact</NavLink>
           </li>
         </ul>
-        <NavLink to="/Basket" className="px-2 md:px-14 flex self-center">
+        <NavLink
+          to="/Basket"
+          className="relative px-2 md:px-14 flex self-center"
+        >
           <i className="fa-solid fa-cart-shopping text-primary text-2xl"></i>
+          {totalCartItems > 0 && (
+            <span className="cart-badge">{totalCartItems}</span>
+          )}
         </NavLink>
       </nav>
       <SearchBar products={products} />
@@ -60,6 +68,7 @@ function Header({ products }) {
 
 Header.propTypes = {
   products: PropTypes.array.isRequired,
+  cart: PropTypes.array.isRequired,
 };
 
 export default Header;
