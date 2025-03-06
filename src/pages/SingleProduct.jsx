@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import { ArrowBigLeft } from "lucide-react";
 
-function SingleProduct({ products }) {
+function SingleProduct({ products, addToCart }) {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -61,8 +61,11 @@ function SingleProduct({ products }) {
         </div>
 
         <div>
-          <button className="product-add-btn bg-primary border-2 border-accent font-title rounded-md cursor-pointer text-white p-2">
-            Add To Cart{" "}
+          <button
+            onClick={() => addToCart(product)}
+            className="product-add-btn bg-primary border-2 border-accent font-title rounded-md cursor-pointer text-white p-2"
+          >
+            Add To Cart
           </button>
         </div>
       </div>
@@ -72,6 +75,7 @@ function SingleProduct({ products }) {
 
 SingleProduct.propTypes = {
   products: PropTypes.array.isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default SingleProduct;

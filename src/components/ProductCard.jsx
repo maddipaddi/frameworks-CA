@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function ProductCard({ products, onProductClick }) {
+function ProductCard({ products, onProductClick, addToCart }) {
   const navigate = useNavigate();
 
   if (products.length === 0) {
@@ -28,7 +28,14 @@ function ProductCard({ products, onProductClick }) {
           )}
 
           <div className="button-price-container">
-            <button className="card-button">Add</button>
+            <button
+              onClick={() => {
+                addToCart(product);
+              }}
+              className="card-button hover:cursor-pointer "
+            >
+              Add
+            </button>
             <p
               className={`card-price font-title font-bold ${product.discountedPrice < product.price ? "on-sale" : ""}`}
             >
@@ -56,6 +63,7 @@ function ProductCard({ products, onProductClick }) {
 ProductCard.propTypes = {
   products: PropTypes.array.isRequired,
   onProductClick: PropTypes.func.isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default ProductCard;
