@@ -3,10 +3,10 @@ import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function Layout({ products }) {
+function Layout({ products, cart }) {
   return (
     <div>
-      <Header products={products} />
+      <Header products={products} cart={cart} />
       <Outlet />
       <Footer />
     </div>
@@ -15,6 +15,7 @@ function Layout({ products }) {
 
 Layout.propTypes = {
   products: PropTypes.array.isRequired,
+  cart: PropTypes.array.isRequired,
 };
 
 export default Layout;
