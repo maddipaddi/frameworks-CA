@@ -9,6 +9,14 @@ function Basket({ cart, setCart }) {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
+  const updateQuantity = (id, newQuantity) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === id ? { ...item, quantity: Math.max(1, newQuantity) } : item
+      )
+    );
+  };
+
   const calculateTotal = () => {
     return cart.reduce(
       (total, item) => total + item.discountedPrice * item.quantity,
@@ -39,14 +47,38 @@ function Basket({ cart, setCart }) {
                     <span className="text-gray-800 font-medium block font-title">
                       {item.title}
                     </span>
-                    <span className="text-gray-600 text-sm font-copy">
-                      Quantity: {item.quantity}
-                    </span>
+                    <div className="flex items-center gap-2 mt-2">
+                      <button
+                        onClick={() =>
+                          updateQuantity(item.id, item.quantity - 1)
+                        }
+                        className="cursor-pointer"
+                      >
+                        −
+                      </button>
+                      <input
+                        type="number"
+                        min="1"
+                        value={item.quantity}
+                        onChange={(e) =>
+                          updateQuantity(item.id, Number(e.target.value))
+                        }
+                        className="w-12 text-center product-quantity border rounded-md border-gray-600 outline-accent text-sm"
+                      />
+                      <button
+                        onClick={() =>
+                          updateQuantity(item.id, item.quantity + 1)
+                        }
+                        className="cursor-pointer"
+                      >
+                        +
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 mt-2 sm:mt-0">
                   <p className="text-gray-900 font-semibold font-copy text-center sm:text-left">
-                    ${item.discountedPrice * item.quantity}
+                    ${(item.discountedPrice * item.quantity).toFixed(2)}
                   </p>
                   <button
                     onClick={() => removeFromCart(item.id)}
