@@ -1,3 +1,13 @@
+input[type="number"].product-quantity::-webkit-outer-spin-button,
+input[type="number"].product-quantity::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"].product-quantity {
+  -moz-appearance: textfield;
+}
+
 body {
   margin: 0;
   padding-bottom: 50px;
