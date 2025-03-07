@@ -1,10 +1,8 @@
 function Footer() {
   return (
-    <div className="footer-box">
-      <footer>
-        <p>&copy; {new Date().getFullYear()} ClicketyCart</p>
-      </footer>
-    </div>
+    <footer className="text-center bg-[#132661] text-white fixed bottom-0 w-full py-2">
+      <p>&copy; {new Date().getFullYear()} ClicketyCart</p>
+    </footer>
   );
 }
 
