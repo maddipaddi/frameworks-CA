@@ -57,7 +57,9 @@ function Header({ products, cart }) {
         >
           <i className="fa-solid fa-cart-shopping text-primary text-2xl"></i>
           {totalCartItems > 0 && (
-            <span className="cart-badge">{totalCartItems}</span>
+            <span className="cart-badge absolute -top-3 ml-4 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full shadow-lg">
+              {totalCartItems}
+            </span>
           )}
         </NavLink>
       </nav>
