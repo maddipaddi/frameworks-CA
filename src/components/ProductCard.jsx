@@ -50,7 +50,7 @@ function ProductCard({ products, onProductClick, addToCart }) {
                 ? onProductClick(product.id)
                 : navigate(`/product/${product.id}`)
             }
-            className="view-details-btn p-2 pt-3 cursor-pointer"
+            className="view-details-btn p-2 pt-3 cursor-pointer rounded-bl-lg rounded-br-lg"
           >
             View Details
           </button>
