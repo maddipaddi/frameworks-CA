@@ -16,7 +16,7 @@ function SingleProduct({ products, addToCart }) {
     <div className="single-product flex flex-col justify-center justify-self-center min-h-screen max-w-[500px]">
       <div className="image-container ">
         <img
-          className="product-img border-4 border-accent"
+          className="product-img object-cover rounded-2xl w-full max-w-[500px] h-auto aspect-[16/9] overflow-hidden border-4 border-accent"
           src={product.image.url}
           alt={product.image.alt}
         />
@@ -51,10 +51,10 @@ function SingleProduct({ products, addToCart }) {
       )}
 
       <div className="product-btn-container pt-30 flex flex-row justify-between">
-        <div className="back-btn-container">
+        <div className="back-btn-container ">
           <button
             onClick={() => navigate(-1)}
-            className="go-back-btn flex items-center gap-2 cursor-pointer bg-accent text-white p-2 rounded-md"
+            className="go-back-btn hover:shadow-[5px_5px_5px_rgba(0,0,0,0.301)] flex items-center gap-2 cursor-pointer bg-accent text-white p-2 rounded-md"
           >
             <ArrowBigLeft size={30} className="text-white" />
           </button>
@@ -63,7 +63,7 @@ function SingleProduct({ products, addToCart }) {
         <div>
           <button
             onClick={() => addToCart(product)}
-            className="product-add-btn bg-primary border-2 border-accent font-title rounded-md cursor-pointer text-white p-2"
+            className="product-add-btn hover:shadow-[5px_5px_5px_rgba(0,0,0,0.301)] bg-primary border-2 border-accent font-title rounded-md cursor-pointer text-white p-2"
           >
             Add To Cart
           </button>
