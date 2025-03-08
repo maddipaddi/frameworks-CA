@@ -13,7 +13,7 @@ function ProductCard({ products, onProductClick, addToCart }) {
       {products.map((product) => (
         <div
           key={product.id}
-          className="product-Card flex flex-col justify-between border border-[#132661] outline-1 outline-[#007bff] rounded-lg shadow-md shadow-gray-700/50 m-2 w-full max-w-[250px] box-border"
+          className="product-Card flex flex-col justify-between outline-2 outline-accent rounded-lg shadow-md shadow-gray-700/50 m-2 w-full max-w-[250px] box-border"
         >
           <img
             className="card-img w-full h-[150px] object-cover rounded-t-lg"
@@ -61,7 +61,7 @@ function ProductCard({ products, onProductClick, addToCart }) {
                 ? onProductClick(product.id)
                 : navigate(`/product/${product.id}`)
             }
-            className="view-details-btn p-2 pt-3 cursor-pointer hover:bg-[#132661] hover:text-white"
+            className="view-details-btn p-2 pt-3 cursor-pointer hover:bg-primary hover:text-white  rounded-bl-lg rounded-br-lg"
           >
             View Details
           </button>
