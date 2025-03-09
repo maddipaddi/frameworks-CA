@@ -23,8 +23,10 @@ function ContactForm() {
     if (formData.fullName.trim().length < 3)
       newErrors.fullName = "Full name is required.";
 
-    if (!formData.email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/))
-      newErrors.email = "Enter a valid email address.";
+    if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
+      newErrors.email =
+        "Error: Enter a valid email address (e.g., name@example.com).";
+    }
 
     if (formData.subject.trim().length < 3)
       newErrors.subject = "Subject is required.";
@@ -47,6 +49,7 @@ function ContactForm() {
       setTimeout(() => {
         setFormData({ fullName: "", email: "", subject: "", description: "" });
       }, 100);
+      setErrors({});
     } else {
       console.log("Form validation failed.");
     }
@@ -71,20 +74,23 @@ function ContactForm() {
             className="w-full bg-white p-2 text-gray-600 rounded"
             placeholder="Name goes here..."
             required
+            minLength={3}
+            maxLength={30}
           />
         </div>
 
         <div>
           <label className="block text-white pb-2">Email*</label>
           <input
-            type="text"
+            type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
             className="w-full bg-white p-2 text-gray-600 rounded"
             placeholder="Email goes here..."
             required
-          />
+          />{" "}
+          {errors.email && <p className="text-white text-sm">{errors.email}</p>}
         </div>
 
         <div>
@@ -97,6 +103,8 @@ function ContactForm() {
             className="w-full bg-white p-2 text-gray-600 rounded"
             placeholder="Add subject here..."
             required
+            minLength={3}
+            maxLength={30}
           />
         </div>
 
@@ -109,6 +117,8 @@ function ContactForm() {
             className="w-full h-32 p-2 bg-white text-gray-600 rounded resize-none"
             placeholder="Write description here..."
             required
+            minLength={3}
+            maxLength={300}
           />
         </div>
 
