@@ -8,6 +8,9 @@ function Home({ products, addToCart }) {
 
   return (
     <div>
+      <h1 className="text-2xl font-title font-semibold my-2 mx-auto max-w-max">
+        All products
+      </h1>
       <ProductCard products={products} addToCart={handleAddToCart} />
     </div>
   );
