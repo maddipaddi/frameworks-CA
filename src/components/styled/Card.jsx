@@ -5,8 +5,8 @@ const Card = styled.div`
   color: #fff;
   border: solid #007bff 2px;
   border-radius: 1rem;
-  padding: 2rem;
-  margin: 2rem auto;
+  padding: 2rem 3rem;
+  margin: 1rem auto;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;

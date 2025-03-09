@@ -82,7 +82,7 @@ function Basket({ cart, setCart }) {
                   </p>
                   <button
                     onClick={() => removeFromCart(item.id)}
-                    className="bg-primary hover:bg-red-600 text-white px-3 py-1 rounded-md transition duration-200 mt-2 sm:mt-0"
+                    className="cursor-pointer bg-primary hover:bg-red-600 text-white px-3 py-1 rounded-md transition duration-200 mt-2 sm:mt-0"
                   >
                     Remove
                   </button>
