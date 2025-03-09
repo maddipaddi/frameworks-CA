@@ -43,7 +43,7 @@ function ProductCard({ products, onProductClick, addToCart }) {
               onClick={() => {
                 addToCart(product);
               }}
-              className="font-title bg-primary text-white text-lg font-bold py-1 px-2 ml-5 border border-black  hover:cursor-pointer "
+              className="font-title bg-primary text-white text-lg font-bold py-1 px-2 ml-5 border border-black hover:bg-accent  hover:cursor-pointer "
             >
               Add
             </button>
