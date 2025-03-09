@@ -10,6 +10,11 @@ const BaseButton = styled.button`
   font-size: 1.25rem;
   max-width: fit-content;
   cursor: pointer;
+
+  :hover {
+    background-color: #e0f4fc;
+    color: #132661;
+  }
 `;
 
 export default BaseButton;
