@@ -2,6 +2,19 @@ import { useState } from "react";
 import Card from "../components/styled/Card";
 import BaseButton from "../components/styled/BaseButton";
 
+/**
+ * ContactForm is a React functional component that renders a contact form with fields for full name, email, subject, and description.
+ * It manages form state and validation using React's useState hook.
+ *
+ * Features:
+ * - Validates input fields for minimum length and correct email format.
+ * - Displays error messages for invalid inputs.
+ * - Resets form upon successful submission and shows a success alert.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered contact form component.
+ */
+
 function ContactForm() {
   const [formData, setFormData] = useState({
     fullName: "",

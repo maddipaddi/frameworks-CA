@@ -3,6 +3,15 @@ import Card from "../components/styled/Card";
 import Logo from "../assets/ClicketyCartLogo.png";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * Checkout component displays a confirmation message after a successful payment.
+ *
+ * Renders a card with a success message, logo, and a button to navigate back to the shop.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered Checkout confirmation UI.
+ */
+
 function Checkout() {
   const navigate = useNavigate();
   return (

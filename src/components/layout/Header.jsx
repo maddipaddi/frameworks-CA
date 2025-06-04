@@ -3,6 +3,16 @@ import { NavLink } from "react-router-dom";
 import SearchBar from "../SearchBar";
 import PropTypes from "prop-types";
 
+/**
+ * Header component displays the main navigation bar, site title, and cart icon with item count.
+ * It includes a responsive navigation menu for mobile devices and a search bar for products.
+ *
+ * @component
+ * @param {Object[]} products - Array of product objects to be used in the SearchBar component.
+ * @param {Object[]} cart - Array of cart item objects, each containing a `quantity` property.
+ * @returns {JSX.Element} The rendered header component.
+ */
+
 function Header({ products, cart }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
 

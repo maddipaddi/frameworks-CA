@@ -3,6 +3,18 @@ import Card from "../components/styled/Card";
 import BaseButton from "../components/styled/BaseButton";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * Basket component displays the user's shopping cart, allowing them to view, update, and remove items,
+ * as well as proceed to checkout.
+ *
+ * @component
+ * @param {Object[]} cart - Array of cart item objects. Each item should have `id`, `title`, `image`, `discountedPrice`, and `quantity` properties.
+ * @param {Function} setCart - Function to update the cart state.
+ *
+ * @example
+ * <Basket cart={cart} setCart={setCart} />
+ */
+
 function Basket({ cart, setCart }) {
   const navigate = useNavigate();
   const removeFromCart = (id) => {

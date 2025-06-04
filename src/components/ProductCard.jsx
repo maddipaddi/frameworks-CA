@@ -1,6 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
+/**
+ * Renders a grid of product cards with details, add-to-cart, and view details functionality.
+ *
+ * @component
+ * @param {Object} props
+ * @param {Array<Object>} props.products - Array of product objects to display.
+ * @param {function} [props.onProductClick] - Optional callback invoked when a product's "View Details" button is clicked. Receives the product id as an argument.
+ * @param {function} props.addToCart - Callback invoked when the "Add" button is clicked. Receives the product object as an argument.
+ *
+ * @example
+ * <ProductCard
+ *   products={products}
+ *   onProductClick={handleProductClick}
+ *   addToCart={handleAddToCart}
+ * />
+ */
+
 function ProductCard({ products, onProductClick, addToCart }) {
   const navigate = useNavigate();
 
