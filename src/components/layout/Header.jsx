@@ -50,9 +50,12 @@ function Header({ products, cart }) {
             </ul>
           </div>
         </section>
-        <h1 className="text-2xl font-semibold text-primary px-2">
-          ClicketyCart
-        </h1>
+        <NavLink to="/">
+          <h1 className="text-2xl font-semibold text-primary px-2">
+            ClicketyCart
+          </h1>
+        </NavLink>
+
         <ul className="hidden lg:flex self-center px-4 gap-12 text-lg font-semibold text-primary">
           <li>
             <NavLink to="/">Home</NavLink>
