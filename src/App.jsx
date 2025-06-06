@@ -9,6 +9,17 @@ import Basket from "./pages/Basket";
 import Checkout from "./pages/Checkout";
 import ProductCard from "./components/ProductCard";
 
+/**
+ * Main application component for the online shop.
+ *
+ * Handles fetching product data, managing the shopping cart state,
+ * and routing between different pages (Home, Contact, Product, Basket, Checkout).
+ *
+ * @component
+ *
+ * @returns {JSX.Element} The rendered application with routing and state management.
+ */
+
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);

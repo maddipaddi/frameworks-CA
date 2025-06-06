@@ -3,6 +3,18 @@ import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import { ArrowBigLeft } from "lucide-react";
 
+/**
+ * Displays detailed information about a single product, including image, price, discount, description, rating, tags, and reviews.
+ * Allows users to add the product to the cart or navigate back.
+ *
+ * @component
+ * @param {Object} props
+ * @param {Array<Object>} props.products - Array of product objects to search from.
+ * @param {Function} props.addToCart - Function to add the selected product to the cart.
+ *
+ * @returns {JSX.Element} The rendered SingleProduct component.
+ */
+
 function SingleProduct({ products, addToCart }) {
   const { id } = useParams();
   const navigate = useNavigate();
