@@ -42,10 +42,18 @@ const SearchBar = ({ products }) => {
   return (
     <>
       <div className="flex self-center border-2 border-solid rounded-full">
-        <Search className="flex self-center mx-2" />
+        <label
+          htmlFor="search"
+          aria-label="search"
+          className="flex self-center mx-2"
+        >
+          <Search />
+        </label>
         <input
           className="px-4 py-1 text-copy focus:outline-none lg:w-96"
           type="text"
+          name="search"
+          id="search"
           placeholder="Search products..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
