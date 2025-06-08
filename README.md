@@ -6,7 +6,7 @@ At **ClicketyCart**, we believe shopping should be as quick and seamless as a si
 
 This project is the **frontend implementation** of a fictional e-commerce store, built on an existing backend API provided by Noroff. The aim is to bring the user interface to life with a fun, retro design and modern React functionality.
 
-![plot](../frameworks-CA/src/assets/ClicketyCart-home-page.png)
+![Uploading Screenshot 2025-06-08 185504.png…]()
 
 ---
 
