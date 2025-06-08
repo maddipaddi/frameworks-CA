@@ -78,10 +78,13 @@ function ContactForm() {
         className="flex flex-col gap-5 mt-5 min-w-full"
       >
         <div>
-          <label className="block text-white pb-2">Full Name*</label>
+          <label htmlFor="fullName" className="block text-white pb-2">
+            Full Name*
+          </label>
           <input
             type="text"
             name="fullName"
+            id="fullName"
             value={formData.fullName}
             onChange={handleChange}
             className="w-full bg-white p-2 text-gray-600 rounded"
@@ -93,24 +96,30 @@ function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-white pb-2">Email*</label>
+          <label htmlFor="email" className="block text-white pb-2">
+            Email*
+          </label>
           <input
             type="email"
             name="email"
+            id="email"
             value={formData.email}
             onChange={handleChange}
             className="w-full bg-white p-2 text-gray-600 rounded"
             placeholder="Email goes here..."
             required
-          />{" "}
+          />
           {errors.email && <p className="text-white text-sm">{errors.email}</p>}
         </div>
 
         <div>
-          <label className="block text-white pb-2">Subject*</label>
+          <label htmlFor="subject" className="block text-white pb-2">
+            Subject*
+          </label>
           <input
             type="text"
             name="subject"
+            id="subject"
             value={formData.subject}
             onChange={handleChange}
             className="w-full bg-white p-2 text-gray-600 rounded"
@@ -122,9 +131,12 @@ function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-white pb-2">Description*</label>
+          <label htmlFor="description" className="block text-white pb-2">
+            Description*
+          </label>
           <textarea
             name="description"
+            id="description"
             value={formData.description}
             onChange={handleChange}
             className="w-full h-32 p-2 bg-white text-gray-600 rounded resize-none"
