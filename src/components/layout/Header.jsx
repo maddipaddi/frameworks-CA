@@ -67,6 +67,7 @@ function Header({ products, cart }) {
         <NavLink
           to="/Basket"
           className="relative px-2 md:px-14 flex self-center"
+          aria-label="Cart"
         >
           <i className="fa-solid fa-cart-shopping text-primary text-2xl"></i>
           {totalCartItems > 0 && (
