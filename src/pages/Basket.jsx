@@ -68,15 +68,22 @@ function Basket({ cart, setCart }) {
                       >
                         −
                       </button>
-                      <input
-                        type="number"
-                        min="1"
-                        value={item.quantity}
-                        onChange={(e) =>
-                          updateQuantity(item.id, Number(e.target.value))
-                        }
-                        className="w-12 text-center product-quantity border rounded-md border-gray-600 outline-accent text-sm"
-                      />
+                      <label
+                        aria-label="Item quantity"
+                        htmlFor={`${item.title}-quantity`}
+                      >
+                        <input
+                          name="quantity"
+                          id={`${item.title}-quantity`}
+                          type="number"
+                          min="1"
+                          value={item.quantity}
+                          onChange={(e) =>
+                            updateQuantity(item.id, Number(e.target.value))
+                          }
+                          className="w-12 text-center product-quantity border rounded-md border-gray-600 outline-accent text-sm"
+                        />
+                      </label>
                       <button
                         onClick={() =>
                           updateQuantity(item.id, item.quantity + 1)
